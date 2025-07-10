@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>8Ball Tech</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<div id="services-overlay"></div>
+<body>
+  <a href="https://wa.me/56912345678?text=Hola%20vengo%20desde%20tu%20página%20web%20y%20me%20interesan%20tus%20servicios" 
+   class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+  <!-- NAVBAR -->
+  <nav id="navbar" class="transparent">
+    <div class="nav-links">
+      <a href="#hero">Inicio</a>
+      <a href="#services">Servicios</a>
+      <a href="#portfolio">Portafolio</a>
+      <a href="#about">Quiénes somos</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="logo-container">
+      <!-- SVG animado (laptop + bola 8) -->
+      <svg id="logo-svg" viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+        <rect id="screen-bg"      x="10" y="10" width="320" height="120" rx="16" ry="16" fill="#fff"/>
+        <rect id="screen-outline" x="10" y="10" width="320" height="120" rx="16" ry="16"
+              fill="none" stroke="#2f3e55" stroke-width="10" stroke-linejoin="round"/>
+        <circle id="camera-light" cx="170" cy="10" r="4" fill="#fff"/>
+        <circle id="outer-ring"   cx="170" cy="70" r="24"
+                fill="none" stroke="#2f3e55" stroke-width="10"/>
+        <circle id="inner-circle" cx="170" cy="70" r="20" fill="#25a4e1"/>
+        <text id="eight" x="170" y="76" text-anchor="middle"
+              font-size="24" font-family="Arial, sans-serif"
+              fill="#fff">8</text>
+        <rect id="base-slab" x="10" y="145" width="320" height="16" rx="8" ry="8" fill="#2f3e55"/>
+        <text id="logo-text"
+              x="170" y="185"
+              text-anchor="middle"
+              font-size="28"
+              font-family="Arial, sans-serif"
+              fill="#2f3e55">
+          <tspan font-weight="bold">8Ball</tspan><tspan font-weight="normal">Tech</tspan>
+        </text>
+      </svg>
+    </div>
+
+    <!-- Subtítulo typewriter -->
+   <h2 id="subtitle"><span><div id="subtitle"></div></span></h2> 
+
+    <!-- Botón CTA -->
+    <button id="cta-btn">Ver servicios</button>
+  </section>
+
+
+   <!-- ¿QUIÉNES SOMOS? -->
+  <section id="about" class="about">
+    <h2>¿Quiénes somos?</h2>
+    <p>
+      Soy Sebastian, la persona detrás de <strong>8Ball Tech</strong>, 
+      Me especializo en desarrollo web, diseño y soporte técnico, 
+      combinando creatividad con soluciones prácticas
+      para ayudar a personas y negocios a llevar sus ideas al siguiente nivel.
+      Trabajo desde Santiago de Chile, ofreciendo atención personalizada en toda la Región Metropolitana,
+      ya sea de forma presencial o remota.
+      Mi enfoque es directo, profesional y comprometido: 
+      desde la primera conversación hasta la entrega final, me involucro en cada etapa del proceso para asegurar resultados reales y funcionales.
+    </p>
+     
+  </section>
+
+<!-- SECCIÓN SERVICIOS -->
+<section id="services">
+  <h2>Nuestros Servicios</h2>
+  <div class="services-grid">
+
+    <!-- Web Básica con sub-servicios -->
+    <article class="service-card has-subservices" data-service="web">
+      <div class="icon-wrapper">
+        <img src="img/website-icon-basic.png" alt="Icono Web Básica">
+      </div>
+      <h3>Web Básica</h3>
+      <p>Landing page sencilla, responsive y moderna.</p>
+      <span class="price">Desde $90.000 CLP</span>
+
+      <!-- Pop-over de sub-servicios -->
+      <div class="subservices">
+        <div class="subservice">
+          <div class="icon-wrapper">
+          <img src="img/website-icon-basic.png" alt="Icono Básica">
+          </div>
+          <h4>Básica</h4>
+          <p>1 sección, sin extras</p>
+          <span class="price">$90.000 CLP</span>
+          <button class="add-sub">Agregar</button>
+        </div>
+        <div class="subservice">
+          <div class="icon-wrapper">
+          <img src="img/website-empresarial.png" alt="Icono Empresarial">
+          </div>
+          <h4>Empresarial</h4>
+          <p>Multi-página + blog + formulario</p>
+          <span class="price">$200.000 CLP</span>
+          <button class="add-sub">Agregar</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- E-commerce con sub-servicios -->
+    <article class="service-card has-subservices" data-service="ecommerce">
+      <div class="icon-wrapper">
+      <img src="/img/Marketplace.png" alt="Icono E-commerce">
+      </div>
+      <h3>E-commerce</h3>
+      <p>Tienda online completa con carrito y pagos.</p>
+      <span class="price">Desde $300.000 CLP</span>
+  
+
+      <div class="subservices">
+        <div class="subservice">
+          <div class="icon-wrapper">
+            <img src="/img/B2C-icon.png" alt="Icono Tienda B2C">
+          </div>
+          
+          <h4>B2C</h4>
+          <p>Catálogo + checkout sencillo</p>
+          <span class="price">$300.000 CLP</span>
+          <button class="add-sub">Agregar</button>
+        </div>
+        <div class="subservice">
+          <div class="icon-wrapper">
+            <img src="/img/Marketplace.png" alt="Icono Marketplace">
+          </div>
+          
+          <h4>Marketplace</h4>
+          <p>Varios vendedores, comisiones</p>
+          <span class="price">$600.000 CLP</span>
+          <button class="add-sub">Agregar</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Mantenimiento con sub-servicios -->
+    <article class="service-card has-subservices" data-service="maintenance">
+      <div class="icon-wrapper">
+      <img src="/img/program-icon.png" alt="Icono Mantenimiento">
+      </div>
+      <h3>Software</h3>
+      <p>desarrollo de Software.</p>
+      <span class="price">Desde $200 000 CLP</span>
+      <button type="button">Seleccionar</button>
+
+      <div class="subservices">
+        <div class="subservice">
+          <div class="icon-wrapper">
+          <img src="/img/program-icon.png" alt="Icono Mensual">
+          </div>
+          <h4>programa de escritorio</h4>
+          <p>programas a tu medida</p>
+          <span class="price">Desde $200.000 CLP</span>
+        
+        </div>
+        <div class="subservice">
+          <div class="icon-wrapper">
+          <img src="/img/app-icon.png" alt="Icono Anual">
+          </div>
+          <h4>Programa Movil</h4>
+          <p>La apps que nesesitas a tu medida</p>
+          <span class="price">Desde $200 000 CLP</span>
+          
+        </div>
+      </div>
+    </article>
+
+    <!-- Reparación con sub-servicios -->
+    <article class="service-card has-subservices" data-service="repair">
+      <div class="icon-wrapper">
+      <img src="img/Reparación-hardware.png" alt="Icono Reparación">
+      </div>
+      <h3>Reparación</h3>
+      <p>Corrección de errores y fallos.</p>
+      <span class="price">$40.000 CLP / hora</span>
+      <button type="button">Seleccionar</button>
+
+      <div class="subservices">
+        <div class="subservice">
+          <div class="icon-wrapper">
+          <img src="img/Reparación-hardware.png" alt="Icono Hardware">
+          </div>
+          <h4>Hardware</h4>
+          <p>Reparación y mejoramiento de tu equipo.</p>
+          <span class="price">$20 000 CLP</span>
+          <button class="add-sub">Agregar</button>
+        </div>
+        <div class="subservice">
+          <div class="icon-wrapper">
+          <img src="img/Reparación-software.png" alt="Icono Software">
+          </div>
+          <h4>Software</h4>
+          <p>Reinstalación y configuración</p>
+          <span class="price">$15 000 CLP</span>
+          <button class="add-sub">Agregar</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section id="pricing">
+  <h2>Precios y Servicios</h2>
+  
+  <!--Selector de pestañas-->
+  <div class="pricing-tabs">
+    <button class="tab active" data-tab="programs">🖥 Programas</button>
+    <button class="tab" data-tab="repairs">🔧 Reparación</button>
+  </div>
+
+  <div class="pricing-content">
+    <div class="pricing-panel show left-in" id="programs">
+      <ul>
+        <li><Span>Web Basica</Span><span>Desde $90.000</span></li>
+        <li><span>Web Empresarial</span><span>Desde $200.000</span></li>
+        <li><span>e-commence</span><span>Desde $300.000</span></li>
+        <li><span>Marketplace</span><span>Desde $650.000</span></li>
+        <li><span>Software/app basica</span><span>Desde $230.000</span></li>
+        <li><span>software/app compleja</span><span>Desde $400.000</span></li>
+        <li><span>Dominio + Hosting (anual)</span><span>Desde $30.000</span></li>
+      </ul>
+    </div>
+    <!--Panel:Reparacion-->
+    <div class="pricing-panel" id="repairs">
+      <ul>
+        <li><span>Diagnostico</span><span>Gratis</span></li>
+        <li><span>Limpieza de PC</span><span>Desde $20.000</span></li>
+        <li><span>upgrade de Laptop</span><span>$15.000 + Repuesto</span></li>
+        <li><span>Upgrade de PC</span><span>$15.000 + Repuesto</span></li>
+        <li><span>Reparación de monitor</span><span>$25.000 + Repeusto</span></li>
+        <li><span>Sistema Operativo</span><span>$15.000 + SO</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact">
+  <h2>Contacto</h2>
+  <form class="contact-form" action="mailto:TU_CORREO@ejemplo.com" method="POST" enctype="text/plain">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="Nombre" required>
+
+    <label for="email">Correo Electronico</label>
+    <input type="email" id="subject" name="Asunto" required>
+
+    <label for="messenge">Explique su cotización</label>
+    <textarea id="messenge" name="Mensaje" rows="5" required></textarea>
+
+    <button type="submit">Enviar Mensaje</button>
+  </form>
+</section>
+
+
+<div id="faq">
+  <h2>Preguntas frecuentes</h2>
+
+  <!-- Categoria: Reparaciones-->
+   <div class="faq-category">
+    <h3> REPARACIONES</h3>
+    <div class="faq-item">
+      <button class="faq-question">¿Cuanto tarda una reparació? <span>›</span></button>
+      <div class="faq-answer">
+        Diagnostico hasta 48h, reparación en 2 a 4 días dependiendo de stock y urgencia.
+      </div>
+    </div>  
+    <div class="faq-item">
+      <button class="faq-question">¿Cuanto me costara aproximadamente? <span>›</span></button>
+      <div class="faq-answer">
+        Depende del tipo de falla puede y pieza puede rondar entre 20.000 y 200.000 o mas dependiendo del serivcio.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Dan garantía de la reparación y por cuánto tiempo? <span>›</span></button>
+      <div class="faq-answer">
+        30 días de garantía por mano de obra. Las piezas tienen garantía según disponibilidad del proveedor.
+        tambien en nuestra sección de garantías explicamos detalladamente que garantias tenemos y que requisitos debe tener 
+        para que se cumpla.
+      </div>
+
+    </div>
+     <div class="faq-item">
+      <button class="faq-question">¿Qué pasa si no consiguen la pieza específica?  <span>›</span></button>
+     <div class="faq-answer">
+       Ofrecemos alternativas compatibles, devolución del equipo sin costo adicional o reembolso parcial.
+      </div>
+    </div>
+
+     <div class="faq-item">
+      <button class="faq-question">Modalidades de servicio disponibles <span>›</span></button>
+      <div class="faq-answer">
+        Atendemos en laboratorio o a domicilio (con recargo).
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Resguardan mis datos en el formateo o reparación? <span>›</span></button>
+      <div class="faq-answer">
+        Realizamos respaldos cuando es posible. Recomendamos al cliente hacer copia previa de sus archivos importantes.
+      </div>
+    </div>
+  </div>
+
+  <!-- Categoría: Desarrollo Web -->
+  <div class="faq-category">
+    <h3>🌐 Desarrollo Web</h3>
+    <div class="faq-item">
+      <button class="faq-question">¿Qué necesito para tener un sitio web listo? <span>›</span></button>
+      <div class="faq-answer">
+        Necesitas dominio, hosting, contenido (texto, imágenes), y una estructura clara del sitio.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Cuánto tarda en entregarse un sitio web? <span>›</span></button>
+      <div class="faq-answer">
+        Entre 1 y 2 semanas, dependiendo de la complejidad y la cantidad de contenido entregado.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Qué se incluye en un desarrollo web estándar? <span>›</span></button>
+      <div class="faq-answer">
+        Diseño responsive, formulario de contacto, SEO básico y soporte post-lanzamiento.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Puedo pagar en cuotas o en distintas modalidades? <span>›</span></button>
+      <div class="faq-answer">
+        Sí, aceptamos transferencias, pagos en cuotas sin interés y efectivo.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Se puede actualizar el sitio más adelante? <span>›</span></button>
+      <div class="faq-answer">
+        Sí. Ofrecemos mantenimiento, ampliaciones de contenido o nuevas secciones.
+      </div>
+    </div>
+  </div>
+
+  <!-- Categoría: Contratación y Seguridad -->
+  <div class="faq-category">
+    <h3>👥 Contratación y Seguridad</h3>
+    <div class="faq-item">
+      <button class="faq-question">¿Por qué elegirnos sobre grandes marcas o tiendas? <span>›</span></button>
+      <div class="faq-answer">
+        Porque ofrecemos atención personalizada, respuesta rápida, precios claros y sin letra chica.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Hasta qué zonas de Santiago operan? <span>›</span></button>
+      <div class="faq-answer">
+        Atendemos en toda la capital. Para zonas periféricas, trabajamos con envíos o cobramos un adicional.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">¿Cómo solicito un presupuesto o servicio técnico? <span>›</span></button>
+      <div class="faq-answer">
+        Puedes usar nuestro formulario, escribirnos por WhatsApp o enviar un correo.
+      </div>
+    </div>
+  </div>
+
+   </div>
+
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>8Ball Tech</h3>
+      <p>Soluciones en desarrollo web y reparación tecnica en Santiago</p>
+    </div>
+    <div class="footer-link ">
+      <h4>Enlaces Rapidos</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#Quienes Somos?">¿Quienes somos?</a></li>
+        <li><a href="#Servicios">Serivicos</a></li>
+        <li><a href="#precios">Precios de servicos</a></li>
+        <li><a href="#contactos">Contactos</a></li>
+        <li><a href="#FAQ">Preguntas frecuentes</a></li>
+        <li><a href="#garantia">Garantias y contrato</a></li>
+      </ul>
+    </div>
+      <div class="footer-contact">
+        <h4>Contactos</h4>
+        <p>Santiago, Chile</p>
+        <p>Telefono: +569 3215 0749</p>
+        <p>8ball.tech@gmail.com</p>
+      </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy;2025 8BallTech. Todos los derechos reservados.</p>
+  </div>
+
+</footer>
+
+
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

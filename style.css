@@ -1,0 +1,874 @@
+/* RESET Y ESTILOS GLOBALES */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #2f3e55 0%, #25a4e1 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.typerwriter-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s step-start infinite;
+  border-right: 2px solid #333;
+}
+
+@keyframes blink {
+  50% { border-color: transparent;}
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 56px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+.whatsapp-float:hover {
+  background-color: #1ebe5d;
+}
+.whatsapp-float i {
+  vertical-align: center;
+}
+
+/* NAVBAR */
+#navbar {
+  position: fixed; top: 0; left: 0; width: 100%;
+  display: flex; justify-content: center; align-items: center;
+  padding: 1rem 2rem; z-index: 999;
+  transition: background .3s, backdrop-filter .3s;
+}
+#navbar.transparent { background: transparent; backdrop-filter: none; }
+#navbar.scrolled {
+  background: rgba(47,62,85,0.8);
+  backdrop-filter: blur(10px);
+}
+.nav-links a {
+  margin: 0 1rem; color: #fff; text-decoration: none; font-weight: 500;
+  transition: transform .3s, opacity .3s;
+}
+#navbar.scrolled .nav-links a {
+  transform: translateY(-10px); opacity: 0;
+}
+.hamburger { display: none; margin-left: 1rem;
+  width: 24px; height: 18px; flex-direction: column;
+  justify-content: space-between; cursor: pointer;
+}
+.hamburger span {
+  display: block; height: 3px; background: #fff; border-radius: 2px;
+}
+#navbar.scrolled .hamburger { display: flex; }
+
+/* HERO */
+#hero {
+  flex: 1; min-height: 100vh; display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 1rem;
+}
+
+/* SVG ANIM */
+.logo-container {
+  width: 50%; max-width: 400px; margin-bottom: 2rem;
+}
+.logo-container svg {
+  width: 100%; height: auto; max-height: 300px;
+}
+
+/* OCULTAR ESTADOS INICIALES */
+#screen-outline, #outer-ring {
+  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+}
+#camera-light, #inner-circle, #eight, #base-slab, #logo-text {
+  opacity: 0;
+}
+#inner-circle, #eight { transform-origin: center center; transform: scale(0); }
+#base-slab { transform-origin: top center; transform: scaleY(0); }
+#logo-text { transform: translateY(-20px); }
+
+/* SUBTITLE TYPEWRITER */
+#subtitle {
+  font-family: 'Courier New', monospace;
+  font-size: 2.75rem; font-weight: 600;
+  color: #2f3e55;
+  white-space: nowrap; overflow: hidden;
+  border-right: 0.1em solid #2f3e55;
+  opacity: 0; transform: translateY(-10px);
+  margin-bottom: 1rem;
+  transition: opacity .5s, transform .5s;
+}
+
+/* CTA BUTTON */
+#cta-btn {
+  padding: .6rem 1.2rem; font-size: 1rem;
+  background: #fff; color: #2f3e55;
+  border: none; border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background .2s, transform .2s;
+  margin-bottom: 4rem;
+}
+#cta-btn:hover {
+  background: #f1f1f1; transform: translateY(-2px);
+}
+
+/* ABOUT */
+.about {
+  width: 100%; padding: 6rem 2rem; margin-top: 2rem;
+  background: rgba(0,0,0,0.6); color: #f1f1f1;
+  text-align: center;
+}
+.about h2 { font-size: 2rem; margin-bottom: 1rem; }
+.about p { font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto; }
+/* ==============================
+   TÍTULO “NUESTROS SERVICIOS”
+   ============================== */
+/* ==============================
+   SECCIÓN SERVICIOS
+   ============================== */
+#services {
+  width: 100%;
+  max-width: 1024px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+#services h2 {
+  font-size: 2.5rem;      /* tamaño destacado */
+  font-weight: 600;       /* semi-bold */
+  color: #fff;            /* blanco sobre tu fondo */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s;
+  color: #2f3e55;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.service-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: .75rem;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  margin: .5rem 0;
+}
+
+.service-card p {
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+
+.service-card .price {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-card button {
+  background: #25a4e1;
+  color: #fff;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.service-card button:hover {
+  background: #1e85c0;
+}
+
+.service-card button.selected {
+  background: #2f3e55;
+}
+
+/* ================
+   SERVICIOS GRID
+   ================ */
+#services {
+  padding: 4rem 1rem;
+  background: rgba(255,255,255,0.1);
+}
+#services h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.services-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* tarjeta general */
+.service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #2f3e55;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform .2s, box-shadow .2s;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.service-card .icon-wrapper {
+  width: 100px;            /* tamaño fijo del contenedor */
+  height: 80px;
+  margin: 0 auto 1rem;    /* centrado + separación abajo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* La img rellena ese espacio sin deformarse */
+.service-card .icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.service-card h3 {
+  margin: .5rem 0;
+  font-size: 1.1rem;
+}
+.service-card p {
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+.service-card .price {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.service-card button {
+  background: #25a4e1;
+  color: #fff;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.service-card button:hover {
+  background: #1e85c0;
+}
+
+/* ================================
+ /* --- OVERLAY de fondo --- */
+#services-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 5;
+}
+
+/* --- Pop-over de subservicios --- */
+.has-subservices {
+  position: relative;
+  z-index: 10; /* por encima del overlay */
+}
+.has-subservices .subservices {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+/* mini-cards dentro del pop-over */
+.subservice {
+  text-align: center;
+  max-width: 140px;
+}
+.subservice img {
+  width: 90px; height: 70px;
+  margin-bottom: 0.5rem;
+}
+.subservice h4 {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+}
+.subservice p {
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+.subservice .price {
+  font-weight: 600;
+  display: block;
+  margin: 0.5rem 0;
+}
+.subservice .add-sub {
+  background: #2f3e55;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Estado HOVER: muestra overlay y pop-over */
+.has-subservices:hover ~ #services-overlay,
+.has-subservices:hover ~ #services-overlay,
+.has-subservices:hover + #services-overlay,
+.has-subservices:hover ~ #services-overlay {
+  /* este selector no siempre funciona en todos los flujos, por eso usamos JS */
+}
+
+/* (En CSS puro no podemos apuntar "hover de X muestra Y fuera de su árbol",
+   así que controlaremos overlay con JavaScript.) */
+.has-subservices:hover .subservices {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Pop-over: fade + scale */
+.has-subservices .subservices {
+  z-index: 999;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  gap: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Flecha indicadora */
+.has-subservices .subservices::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: #fff;
+}
+/* Al hacer hover: mostramos y “zoom” */
+.has-subservices:hover .subservices {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/*CONTACT*/
+#contact {
+  width: 100%;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255,255, 0.1);
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border:none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  color: #2f3e55;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  background-color: #25a4e1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #1e85c0;
+}
+
+/*ESTILO FAQ*/
+#faq {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255,255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+}
+
+#faq h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.faq-category h3 {
+  margin-top: 2rem;
+  color: #25a4e1;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255,255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.faq-item {
+  margin: 1rem 0;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255,255, 0.2);
+}
+
+.faq-question span {
+  transition: transform 0.3s;
+}
+
+.faq-question.open span {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+  font-size: 0.95rem;
+  color:#e0e0e0;
+  pointer-events: none;
+}
+
+.faq-answer.show {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.faq-answer.activate {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.faq-question span {
+  transition: transform 0.3s;
+}
+
+.faq-question.open span {
+  transform: rotate(90deg);
+}
+
+/*Precios*/
+#pricing {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 4rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+#pricing h2 {
+  font-size: 3rem;
+  margin-top: 1.4rem;
+}
+
+.pricing-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-tabs .tab {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 2px solid #25a4e1;
+  color: #25a4e1;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.pricing-tabs .tab.active {
+  background: #25a4e1;
+  color: white;
+}
+
+.pricing-content {
+  position: relative;
+  overflow: hidden;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  min-height: 300px;
+}
+
+.pricing-panel.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pricing-panel {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.pricing-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-panel ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.pricing-panel ul li span {
+  display: inline-block;
+  min-width: 20%;
+  font-weight: 50;
+}
+
+.pricing-panel ul li span:first-child{
+  flex: 0 0 60%;
+  text-align: left;
+  white-space: normal;
+
+}
+
+.pricing-panel ul li span:last-child {
+  flex: 0 0 40%;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/*panel activo*/
+.pricing-panel.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*Animaciones*/
+.left-in {transform: translateX(-100%);}
+.right-in {transform: translateX(100%);}
+
+.pricing-panel.show.left-in {transform: translateX(0);}
+.pricing-panel.show.right-in {transform: translateX(0);}
+
+/*Footer*/
+#footer {
+  background-color: #0e1d2f;
+  color: #fff;
+  padding: 3rem 1rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 0 auto;
+  margin: 0 uato;
+}
+
+.footer-container div {
+  flex: 1 1 250px;
+}
+
+.footer-container h3
+.footer-container h4 {
+  color: #25a4e1;
+  margin-bottom: 1rem;
+}
+
+.footer-link ul {
+list-style: none;
+padding: 0;
+}
+.footer-link ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-link ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255,255, 0.2);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/*========================
+  RESPONSIVE - TABLET
+  ========================*/
+
+  @media (max-width:1024px) {
+    #subtittle {
+      font-size: 2.2rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .pricing-panel {
+      font-size: 1.2rem;
+    }
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-container div {
+      flex: 1 1 100%;
+    }
+
+    .pricing-tabs .tab {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .logo-container {
+      width: 80%;
+    }
+  }
+
+  /*========================
+  RESPONSIVE - CELULARES
+  ========================*/
+
+  @media (max-width: 768px) {
+    #navbar {
+      flex-direction: column;
+      padding: 0.8rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin: 0.5rem 0;
+    }
+
+    #subtitle {
+      font-size: 1.8rem;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-content {
+      padding: 0 1rem;
+    }
+
+    .pricing-panel {
+      padding: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.9rem;
+    }
+
+    .logo-container {
+      max-width: 90%;
+    }
+
+    .service-card .icon-wrapper {
+      height: 60px;
+    }
+  }
+
+  /* =======================
+   RESPONSIVE - EXTRA SMALL (celulares antiguos)
+   ======================= */
+
+@media (max-width: 480px) {
+  #subtitle {
+    font-size: 1.5rem;
+  }
+
+  #cta-btn {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .pricing-tabs {
+    flex-direction: column;
+  }
+
+  .pricing-tabs .tab {
+    width: 100%;
+    text-align: center;
+  }
+
+  .subservice img {
+    width: 70px;
+    height: 50px;
+  }
+
+  .pricing-panel ul li {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .pricing-panel ul li span {
+    flex: unset !important;
+    width: 100%;
+    margin: 0.2rem 0;
+    text-align: left !important;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    gap: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+
+  #contact {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  #contact h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    gap: 0.75rem;
+  }
+  .contact-form label {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+  .contact-form buttom {
+    font-size: 0.95rem;
+    width: 100%;
+    padding: 0.7rem;
+    text-align: center;
+  }
+}
