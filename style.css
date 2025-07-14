@@ -1,14 +1,22 @@
 /* RESET Y ESTILOS GLOBALES */
-html, body {
-  height: 100%;
+html {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
-  background: linear-gradient(135deg, #2f3e55 0%, #25a4e1 100%);
   color: #fff;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  scroll-behavior: smooth;
 }
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background: linear-gradient(75deg, #2f3e55 0%, #25a4e1 100%);
+}
+
+
 .typerwriter-cursor {
   display: inline-block;
   width: 1ch;
@@ -43,59 +51,118 @@ html, body {
   vertical-align: center;
 }
 
-/* NAVBAR */
+/*==================
+  NAVBAR
+  ==================*/
+
 #navbar {
-  position: fixed; top: 0; left: 0; width: 100%;
-  display: flex; justify-content: center; align-items: center;
-  padding: 1rem 2rem; z-index: 999;
-  transition: background .3s, backdrop-filter .3s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Alineado a la izquierda */
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 999;
+  transition: background 0.3s, backdrop-filter 0.3s;
 }
-#navbar.transparent { background: transparent; backdrop-filter: none; }
+
+/*fondo transparente por defecto*/
+ #navbar.transparent {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/*Fondo borroso scroll*/
 #navbar.scrolled {
-  background: rgba(47,62,85,0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3); /* importante: con transparencia */
+  backdrop-filter: blur(10px); /* efecto de desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* soporte para Safari */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
 .nav-links a {
-  margin: 0 1rem; color: #fff; text-decoration: none; font-weight: 500;
-  transition: transform .3s, opacity .3s;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
-#navbar.scrolled .nav-links a {
-  transform: translateY(-10px); opacity: 0;
+.nav-links a:hover {
+  color: #25a4e1;
 }
-.hamburger { display: none; margin-left: 1rem;
-  width: 24px; height: 18px; flex-direction: column;
-  justify-content: space-between; cursor: pointer;
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
 }
+
 .hamburger span {
-  display: block; height: 3px; background: #fff; border-radius: 2px;
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
 }
-#navbar.scrolled .hamburger { display: flex; }
+
 
 /* HERO */
 #hero {
-  flex: 1; min-height: 100vh; display: flex;
-  flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 0 1rem;
+  flex: 1; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  padding: 0 1rem;
 }
 
 /* SVG ANIM */
 .logo-container {
-  width: 50%; max-width: 400px; margin-bottom: 2rem;
+  width: 50%; 
+  max-width: 400px; 
+  margin-bottom: 2rem;
 }
 .logo-container svg {
-  width: 100%; height: auto; max-height: 300px;
+  width: 100%; 
+  height: auto; 
+  max-height: 300px;
 }
 
 /* OCULTAR ESTADOS INICIALES */
-#screen-outline, #outer-ring {
-  stroke-dasharray: 1000; stroke-dashoffset: 1000;
+#screen-outline, 
+#outer-ring {
+  stroke-dasharray: 1000; 
+  stroke-dashoffset: 1000;
 }
-#camera-light, #inner-circle, #eight, #base-slab, #logo-text {
+#camera-light, 
+#inner-circle, 
+#eight, 
+#base-slab, 
+#logo-text {
   opacity: 0;
 }
-#inner-circle, #eight { transform-origin: center center; transform: scale(0); }
-#base-slab { transform-origin: top center; transform: scaleY(0); }
-#logo-text { transform: translateY(-20px); }
+#inner-circle, #eight { 
+  transform-origin: center center; 
+  transform: scale(0); 
+}
+
+#base-slab { 
+  transform-origin: top center; 
+  transform: scaleY(0); 
+}
+
+#logo-text { 
+  transform: translateY(-20px); 
+}
 
 /* SUBTITLE TYPEWRITER */
 #subtitle {
@@ -118,6 +185,7 @@ html, body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: background .2s, transform .2s;
   margin-bottom: 4rem;
+  text-decoration: none;
 }
 #cta-btn:hover {
   background: #f1f1f1; transform: translateY(-2px);
@@ -125,15 +193,28 @@ html, body {
 
 /* ABOUT */
 .about {
-  width: 100%; padding: 6rem 2rem; margin-top: 2rem;
-  background: rgba(0,0,0,0.6); color: #f1f1f1;
+  width: 100%;
+  padding: 6rem 2rem; 
+  margin-top: 2rem;
+  background: rgba(0,0,0,0.6); 
+  color: #f1f1f1;
+  text-align: center;
+  box-sizing: border-box;
+}
+.about h2 { 
+  font-size: 2rem; 
+  margin-bottom: 1rem; 
   text-align: center;
 }
-.about h2 { font-size: 2rem; margin-bottom: 1rem; }
-.about p { font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto; }
-/* ==============================
-   TÍTULO “NUESTROS SERVICIOS”
-   ============================== */
+
+.about p { 
+  font-size: 1.1rem; 
+  line-height: 1.6; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  text-align: justify;
+}
+
 /* ==============================
    SECCIÓN SERVICIOS
    ============================== */
@@ -295,13 +376,17 @@ html, body {
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
   z-index: 5;
 }
 
+@media (min-width: 769px) {
+  #services-overlay {
+    backdrop-filter: blur(4px);
+  }
+}
 /* --- Pop-over de subservicios --- */
 .has-subservices {
   position: relative;
@@ -642,6 +727,17 @@ html, body {
   white-space: nowrap;
 }
 
+.pricing-note {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #f1f1f1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-left: 4px solid #25a4e1;
+  border-radius: 6px;
+  text-align: left;
+  }
+
 /*panel activo*/
 .pricing-panel.show {
   opacity: 1;
@@ -668,15 +764,15 @@ html, body {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  max-width: 0 auto;
-  margin: 0 uato;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .footer-container div {
   flex: 1 1 250px;
 }
 
-.footer-container h3
+.footer-container h3,
 .footer-container h4 {
   color: #25a4e1;
   margin-bottom: 1rem;
@@ -747,128 +843,243 @@ padding: 0;
   ========================*/
 
   @media (max-width: 768px) {
-    #navbar {
-      flex-direction: column;
-      padding: 0.8rem;
+
+    .hamburger {
+      display: flex;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      z-index: 1001;
     }
 
     .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #0d1c2e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 999;
+      overflow-y: auto;
+    }
+
+    .nav-links.active {
+      transform: translateX(0);
+    }
+
+    .nav-links ul {
+      display: flex;
+      flex-direction: column !important;  
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .nav-links ul li {
+      margin: 1rem 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-links ul li a {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links.active {
+      transform: translateX(0);
+    }
+    
+    #navbar.scrolled {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border-bottom: none !important;
+    }
+
+    /*=====================
+      Services
+    ========================*/
+
+    .services-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      box-sizing: border-box;
+
+    }
+
+    .service-card {
+      width: 100%;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      color: #2f3e55;
+      display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .nav-links a {
-      margin: 0.5rem 0;
+    
+    .service-card img {
+      width: 96px;
+      height: auto;
+      margin-bottom: 1rem;
+     }
+
+     .service-card .price {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 0.5rem;
     }
 
-    #subtitle {
+
+    .has-subservices {
+      pointer-events: none;
+    }
+
+    .has-subservices .subservices {
+    display: none !important;
+    }
+    #services-overlay {
+      display: none;
+    }
+
+    #pricing {
+      padding: 2rem 1rem;
+    }
+
+    #pricing h2 {
       font-size: 1.8rem;
     }
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
 
-    .pricing-content {
-      padding: 0 1rem;
+    .pricing-tabs .tab {
+      font-size: 1rem;
+      padding: 0.4rem 1rem;
     }
 
     .pricing-panel {
+      font-size: 0.95rem; /* Aquí bajamos el tamaño */
       padding: 1rem;
+    }
+
+    .pricing-panel ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .pricing-panel ul li span {
+      word-break: break-word;
+      overflow-wrap: break-word
+    }
+
+    .pricing-panel ul li span:first-child {
+      flex: 1;
+      white-space: normal;
+      font-weight: 500;
+    }
+
+    .pricing-panel ul li span:last-child {
+      flex: 0 0 40%;
+      text-align: right;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .pricing-note {
+      font-size: 0.85rem;
+      padding: 0.8rem;
+    }
+    /*==================
+    CONTACTO
+    ==================*/
+
+    .contact-form label {
+      font-size: 1rem;
+      margin-left: 0.1rem;
     }
 
     .contact-form input,
     .contact-form textarea {
-      font-size: 0.9rem;
+      width: 85%;
+      font-size: 0.95rem;
+      padding: 0.65rem;
+      border-radius: 6px;
+      box-sizing: border-box;
     }
 
-    .logo-container {
-      max-width: 90%;
+    .contact-form {
+      gap: 0.8rem;
     }
 
-    .service-card .icon-wrapper {
-      height: 60px;
+    .contact-form button {
+      width: 80%;
+      text-align: center;
+      align-self: left;
+      font-size: 0.95rem;
     }
-  }
 
-  /* =======================
-   RESPONSIVE - EXTRA SMALL (celulares antiguos)
-   ======================= */
 
-@media (max-width: 480px) {
-  #subtitle {
-    font-size: 1.5rem;
-  }
 
-  #cta-btn {
-    width: 100%;
-    font-size: 0.95rem;
-  }
 
-  .pricing-tabs {
-    flex-direction: column;
-  }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: left;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
 
-  .pricing-tabs .tab {
-    width: 100%;
-    text-align: center;
-  }
+    .footer-container div {
+      flex: 1 1 25px;
+      max-width: 200px;
+        }
 
-  .subservice img {
-    width: 70px;
-    height: 50px;
-  }
+    .footer-link ul {
+      padding: 0;
+    }
 
-  .pricing-panel ul li {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
+    .footer-link ul li {
+      margin: 0.4rem 0;
+    }
 
-  .pricing-panel ul li span {
-    flex: unset !important;
-    width: 100%;
-    margin: 0.2rem 0;
-    text-align: left !important;
-  }
+    .footer-contact p {
+      font-size: 0.95rem;
+    }
 
-  .faq-question {
-    font-size: 1rem;
-  }
-
-  .footer-container {
-    gap: 1rem;
-  }
-
-  .footer-bottom {
-    font-size: 0.8rem;
-  }
-
-  #contact {
-    margin: 2rem 1rem;
-    padding: 1.5rem 1rem;
-  }
-
-  #contact h2 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-  }
-
-  .contact-form {
-    gap: 0.75rem;
-  }
-  .contact-form label {
-    font-size: 0.95rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.95rem;
-    padding: 0.65rem;
-  }
-  .contact-form buttom {
-    font-size: 0.95rem;
-    width: 100%;
-    padding: 0.7rem;
-    text-align: center;
-  }
+    .footer-bottom {
+      font-size: 0.8rem;
+    }
 }
+
+
+    
+  
+
+    
+

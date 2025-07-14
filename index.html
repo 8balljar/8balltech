@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <div id="services-overlay"></div>
+
+
+
 <body>
   <a href="https://wa.me/56912345678?text=Hola%20vengo%20desde%20tu%20página%20web%20y%20me%20interesan%20tus%20servicios" 
    class="whatsapp-float" target="_blank" aria-label="WhatsApp">
@@ -15,17 +18,18 @@
 </a>
   <!-- NAVBAR -->
   <nav id="navbar" class="transparent">
-    <div class="nav-links">
+  </div>
+    <div class="nav-links" id="navLinks">
       <a href="#hero">Inicio</a>
+      <a href="#about">Quiénes somos?</a>
       <a href="#services">Servicios</a>
-      <a href="#portfolio">Portafolio</a>
-      <a href="#about">Quiénes somos</a>
       <a href="#contact">Contacto</a>
+      <a href="#faq">Preguntas frecuentes</a>
     </div>
-    <div class="hamburger">
-      <span></span><span></span><span></span>
-    </div>
+
   </nav>
+
+
 
   <!-- HERO -->
   <section id="hero">
@@ -58,7 +62,7 @@
    <h2 id="subtitle"><span><div id="subtitle"></div></span></h2> 
 
     <!-- Botón CTA -->
-    <button id="cta-btn">Ver servicios</button>
+    <a id="cta-btn" href="#services">Ver servicios</a>
   </section>
 
 
@@ -99,9 +103,9 @@
           <img src="img/website-icon-basic.png" alt="Icono Básica">
           </div>
           <h4>Básica</h4>
-          <p>1 sección, sin extras</p>
+          <p>Una web, sin extras</p>
           <span class="price">$90.000 CLP</span>
-          <button class="add-sub">Agregar</button>
+          
         </div>
         <div class="subservice">
           <div class="icon-wrapper">
@@ -110,7 +114,7 @@
           <h4>Empresarial</h4>
           <p>Multi-página + blog + formulario</p>
           <span class="price">$200.000 CLP</span>
-          <button class="add-sub">Agregar</button>
+          
         </div>
       </div>
     </article>
@@ -134,7 +138,7 @@
           <h4>B2C</h4>
           <p>Catálogo + checkout sencillo</p>
           <span class="price">$300.000 CLP</span>
-          <button class="add-sub">Agregar</button>
+         
         </div>
         <div class="subservice">
           <div class="icon-wrapper">
@@ -144,7 +148,7 @@
           <h4>Marketplace</h4>
           <p>Varios vendedores, comisiones</p>
           <span class="price">$600.000 CLP</span>
-          <button class="add-sub">Agregar</button>
+          
         </div>
       </div>
     </article>
@@ -157,7 +161,7 @@
       <h3>Software</h3>
       <p>desarrollo de Software.</p>
       <span class="price">Desde $200 000 CLP</span>
-      <button type="button">Seleccionar</button>
+      
 
       <div class="subservices">
         <div class="subservice">
@@ -189,7 +193,7 @@
       <h3>Reparación</h3>
       <p>Corrección de errores y fallos.</p>
       <span class="price">$40.000 CLP / hora</span>
-      <button type="button">Seleccionar</button>
+      
 
       <div class="subservices">
         <div class="subservice">
@@ -199,7 +203,7 @@
           <h4>Hardware</h4>
           <p>Reparación y mejoramiento de tu equipo.</p>
           <span class="price">$20 000 CLP</span>
-          <button class="add-sub">Agregar</button>
+          
         </div>
         <div class="subservice">
           <div class="icon-wrapper">
@@ -208,7 +212,7 @@
           <h4>Software</h4>
           <p>Reinstalación y configuración</p>
           <span class="price">$15 000 CLP</span>
-          <button class="add-sub">Agregar</button>
+          
         </div>
       </div>
     </article>
@@ -228,14 +232,19 @@
   <div class="pricing-content">
     <div class="pricing-panel show left-in" id="programs">
       <ul>
-        <li><Span>Web Basica</Span><span>Desde $90.000</span></li>
-        <li><span>Web Empresarial</span><span>Desde $200.000</span></li>
-        <li><span>e-commence</span><span>Desde $300.000</span></li>
-        <li><span>Marketplace</span><span>Desde $650.000</span></li>
-        <li><span>Software/app basica</span><span>Desde $230.000</span></li>
-        <li><span>software/app compleja</span><span>Desde $400.000</span></li>
-        <li><span>Dominio + Hosting (anual)</span><span>Desde $30.000</span></li>
+        <li><Span>Web Basica </Span><span>Desde $90.000</span></li>
+        <li><span>Web Empresarial </span><span>Desde $200.000</span></li>
+        <li><span>e-commence </span><span>Desde $300.000</span></li>
+        <li><span>Marketplace </span><span>Desde $650.000</span></li>
+        <li><span>Software/app basica </span><span>Desde $230.000</span></li>
+        <li><span>software/app compleja </span><span>Desde $400.000</span></li>
+        <li><span>Dominio + Hosting (anual) </span><span>Desde $30.000</span></li>
       </ul>
+       <p class="pricing-note">
+       💡 Toda página web necesita contar con un dominio  
+          y hosting para estar disponible en internet. 
+          Este servicio puede ser gestionado por nosotros o 
+          puedes traer el tuyo propio.
     </div>
     <!--Panel:Reparacion-->
     <div class="pricing-panel" id="repairs">
@@ -247,6 +256,8 @@
         <li><span>Reparación de monitor</span><span>$25.000 + Repeusto</span></li>
         <li><span>Sistema Operativo</span><span>$15.000 + SO</span></li>
       </ul>
+     
+      </p>
     </div>
   </div>
 </section>
@@ -414,6 +425,6 @@
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
