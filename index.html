@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>8Ball Tech</title>
   <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <div id="services-overlay"></div>
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <body>
   <a href="https://wa.me/56912345678?text=Hola%20vengo%20desde%20tu%20página%20web%20y%20me%20interesan%20tus%20servicios" 
    class="whatsapp-float" target="_blank" aria-label="WhatsApp">
@@ -265,15 +265,15 @@
 
 <section id="contact">
   <h2>Contacto</h2>
-  <form class="contact-form" action="mailto:TU_CORREO@ejemplo.com" method="POST" enctype="text/plain">
+  <form class="contact-form" method="POST" enctype="text/plain">
     <label for="name">Nombre</label>
     <input type="text" id="name" name="Nombre" required>
 
     <label for="email">Correo Electronico</label>
-    <input type="email" id="subject" name="Asunto" required>
+    <input type="email" id="email" name="CorreoElectronico" required>
 
-    <label for="messenge">Explique su cotización</label>
-    <textarea id="messenge" name="Mensaje" rows="5" required></textarea>
+    <label for="message">Explique su cotización</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
     <button type="submit">Enviar Mensaje</button>
   </form>
@@ -424,7 +424,7 @@
 
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="script.js" defer></script>
+  
 </body>
 </html>

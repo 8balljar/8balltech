@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // 9) al finalizar, arrancar typewriter
   tl.finished.then(() => {
-    typeWriter('#subtitle','Reparamos lo que falla.\nCreamos lo que imaginas',100);
+    typeWriter('#subtitle','Reparamos lo que falla.\nCreamos lo que imaginas.',100);
   });
 });
 
@@ -208,5 +208,38 @@ document.addEventListener('DOMContentLoaded', () => {
       panel.classList.add('show', isLeft ? 'left-in' : 'right-in');
       panel.style.zIndex = 1;
     });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 2) Inicializa EmailJS con tu Public Key
+  emailjs.init('_GGAe6xPYYwKcE7Do');
+
+  // 3) Captura el form **DESPUÉS** de que exista en el DOM
+  const form = document.querySelector('.contact-form');
+  if (!form) {
+    console.error('⚠️ No encontré .contact-form en el DOM');
+    return;
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 4) Ahora sí existen los campos
+    const templateParams = {
+      name: form.querySelector('#name').value,
+      email:  form.querySelector('#email').value,
+      message:   form.querySelector('#message').value
+    };
+
+    emailjs.send('service_sy5g8jc', 'template_pggt9f1', templateParams)
+      .then(() => {
+        alert('¡Mensaje enviado con éxito! 😁');
+        form.reset();
+      })
+      .catch(err => {
+        console.error('Error al enviar email:', err);
+        alert('Error al enviar, inténtalo de nuevo.');
+      });
   });
 });
