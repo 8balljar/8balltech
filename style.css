@@ -1016,6 +1016,7 @@ padding: 0;
       justify-content: space-between;
       align-items: flex-start;
       gap: 0.5rem;
+      flex-wrap: wrap;
     }
     .pricing-panel ul li span {
       word-break: break-word;
@@ -1029,7 +1030,7 @@ padding: 0;
     }
 
     .pricing-panel ul li span:last-child {
-      flex: 0 0 40%;
+      flex: 0 0 50%;
       text-align: right;
       white-space: nowrap;
       font-weight: 600;
